@@ -1,6 +1,10 @@
 from ollama import Client, chat
 from sys import argv
 
+if len(argv) < 4:
+    print("Usage: python ollama-api.py <server_ip> <model> <user_message>")
+    exit(1)
+
 ip = argv[1] # IP of the server
 
 client = Client(
